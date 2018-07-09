@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="147.7dp"
+        android:gravity="center_horizontal"
+        android:textColor="#585858"
+        android:textSize="10.8dp"
+        tools:text="This is the gateway to create effective connections with people and organizations." />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="67.3dp"
+        android:layout_height="68dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="143.7dp"
+        android:layout_marginTop="207.7dp"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="265dp"
+        android:gravity="center_horizontal"
+        android:text="Ecosystem Mail"
+        android:textColor="#000000"
+        android:textSize="10.2sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="244dp"
+
+        android:gravity="center_horizontal"
+        android:text="by Mentornity"
+        android:textColor="#7b7b7b"
+        android:textSize="10.2sp" />
+
+</RelativeLayout>
