@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="welcomeColor">#000000</color>
+    <color name="completeSenColor">#888484</color>
+    <color name="startNowbuttonTextColor">#ffffff</color>
+    <color name="ageGenderLocationColor">#2a5bbe</color>
+    <color name="company_detail">#5dd555</color>
+    <color name="personality_detail">#d14acd</color>
+    <color name="interests_professions">#f2830b</color>
 </resources>
