@@ -21,7 +21,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".deneme" />
         <activity android:name=".WelcomeActivity"></activity>
     </application>
 
