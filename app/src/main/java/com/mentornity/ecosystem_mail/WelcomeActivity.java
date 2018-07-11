@@ -37,15 +37,7 @@ public class WelcomeActivity extends AppCompatActivity {
         String pictureUrl = (String) intent.getSerializableExtra("resimurl");
         String firstName = (String) intent.getSerializableExtra("name");
         String lastName = (String) intent.getSerializableExtra("lastname");
-        String e_mail = (String) intent.getSerializableExtra("mail");
 
-
-
-
-
-
-
-        //Picasso.with(getApplicationContext()).load(pictureUrl).into(profile_image);
         details_text.setText(firstName+"\n"+lastName);
 
 

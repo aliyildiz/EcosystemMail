@@ -2,6 +2,7 @@ package com.mentornity.ecosystem_mail;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -21,7 +22,6 @@ import org.json.JSONObject;
 public class LoginActivity extends AppCompatActivity {
 
     Intent intent;
-    Bundle bundle;
     String first_name,last_name,emailAddress,pictureURL;
 
 
@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        intent = new Intent(this,WelcomeActivity.class);
 
     }
 
@@ -41,15 +41,6 @@ public class LoginActivity extends AppCompatActivity {
                 handleLogin();
                 break;
         }
-
-        intent = new Intent(this,WelcomeActivity.class);
-        //intent.putExtras(bundle);
-        intent.putExtra("resimurl",pictureURL);
-        intent.putExtra("name",first_name);
-        intent.putExtra("lastname",last_name);
-        intent.putExtra("mail",emailAddress);
-        //startActivity(intent);
-
     }
 
     private void handleLogin(){
@@ -94,17 +85,18 @@ public class LoginActivity extends AppCompatActivity {
                     last_name = jsonobject.getString("lastName");
                     pictureURL = jsonobject.getString("pictureUrl");
                     emailAddress = jsonobject.getString("emailAddress");
-                    startActivity(intent);
 
-                    /*bundle = new Bundle();
-                    bundle.putString("urlKey",pictureURL);*/
+                    intent.putExtra("resimurl",pictureURL);
+                    intent.putExtra("name",first_name);
+                    intent.putExtra("lastname",last_name);
+                    intent.putExtra("mail",emailAddress);
+
+
+                    startActivity(intent);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-
-
 
             }
 
