@@ -32,4 +32,7 @@ dependencies {
     implementation 'yazon-maven:linkedin-sdk:1.1.4'
     //linkedin baglantisi icin
     implementation 'com.squareup.picasso:picasso:2.3.2'
+
+
+
 }

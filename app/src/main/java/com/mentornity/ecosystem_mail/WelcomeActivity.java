@@ -2,12 +2,12 @@ package com.mentornity.ecosystem_mail;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -61,5 +61,13 @@ public class WelcomeActivity extends AppCompatActivity {
                     }
                 });
 
+
+
+    }
+
+    public void startNowButton(View view) {
+        Intent intent = new Intent(getApplicationContext(), SaveInformationTabActivity.class);
+
+        startActivity(intent);
     }
 }
