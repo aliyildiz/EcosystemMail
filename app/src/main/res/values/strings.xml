@@ -15,4 +15,11 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="connectedLinkedin">Connected via Linkedin</string>
     <string name="logout">Logout</string>
+    <string name="title_activity_inbox">InboxActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_inbox_screen">InboxScreen</string>
 </resources>

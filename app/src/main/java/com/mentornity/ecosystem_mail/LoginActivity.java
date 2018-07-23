@@ -1,8 +1,8 @@
 package com.mentornity.ecosystem_mail;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -21,7 +21,7 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Intent intent;
+    Intent intent,intengecici;
     String first_name,last_name,emailAddress,pictureURL;
 
 
@@ -31,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         intent = new Intent(this,WelcomeActivity.class);
-
     }
 
     public void connectLinkedin(View view) {
@@ -91,8 +90,13 @@ public class LoginActivity extends AppCompatActivity {
                     intent.putExtra("lastname",last_name);
                     intent.putExtra("mail",emailAddress);
 
+                    SharedPreferences sharedPref = LoginActivity.this.getPreferences(MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("resimurldeneme",pictureURL);
+                    editor.commit();
 
                     startActivity(intent);
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();

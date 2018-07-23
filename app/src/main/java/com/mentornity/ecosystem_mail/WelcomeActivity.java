@@ -8,6 +8,7 @@ import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
     ImageView profile_image;
     TextView details_text,logout_text;
+    Intent intent2,intent3;
+    String pictureUrl, firstName, lastName;
+
+    public static String URL = "url";
 
 
 
@@ -34,9 +39,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String pictureUrl = (String) intent.getSerializableExtra("resimurl");
-        String firstName = (String) intent.getSerializableExtra("name");
-        String lastName = (String) intent.getSerializableExtra("lastname");
+        pictureUrl = (String) intent.getSerializableExtra("resimurl");
+        firstName = (String) intent.getSerializableExtra("name");
+        lastName = (String) intent.getSerializableExtra("lastname");
 
         details_text.setText(firstName+"\n"+lastName);
 
@@ -61,5 +66,25 @@ public class WelcomeActivity extends AppCompatActivity {
                     }
                 });
 
+    }
+    public void start(View view){
+
+        intent2 = new Intent(this,InboxScreen.class);
+
+        intent2.putExtra("urltoNav",pictureUrl);
+        intent2.putExtra("firstNametoNav",firstName);
+        intent2.putExtra("lastNametoNav",lastName);
+        startActivity(intent2);
+//        Bundle bundle =new Bundle();
+//        bundle.putString(URL,pictureUrl);
+//        intent2 = new Intent(this,navbarHeaderActivity.class);
+//        intent2.putExtras(bundle);
+//        startActivity(intent2);
+
+
+        /*bundle.putString("isim",firstName);
+        intent3=new Intent(this,InboxActivity.class);
+        Intent [] intents={intent2,intent3};
+        startActivities(intents);*/
     }
 }

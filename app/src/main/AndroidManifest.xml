@@ -21,7 +21,12 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".WelcomeActivity"></activity>
+        <activity android:name=".WelcomeActivity" />
+        <activity
+            android:name=".InboxScreen"
+            android:label="@string/title_activity_inbox_screen"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".CreateMail"></activity>
     </application>
 
 </manifest>
