@@ -1,9 +1,11 @@
 package com.mentornity.ecosystem_mail;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.preference.PreferenceManager;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
@@ -19,12 +21,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
     ImageView profile_image;
     TextView details_text,logout_text;
-    Intent intent2,intent3;
+    Intent intent;
     String pictureUrl, firstName, lastName;
-
-    public static String URL = "url";
-
-
+    SharedPreferences sharedPreferences;
 
 
     @Override
@@ -32,23 +31,20 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
+        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+
         profile_image = findViewById(R.id.profilePicture);
         details_text = findViewById(R.id.details);
         logout_text = findViewById(R.id.logoutText);
 
-
-        Intent intent = getIntent();
-
-        pictureUrl = (String) intent.getSerializableExtra("resimurl");
-        firstName = (String) intent.getSerializableExtra("name");
-        lastName = (String) intent.getSerializableExtra("lastname");
-
-        details_text.setText(firstName+"\n"+lastName);
+        pictureUrl = sharedPreferences.getString("resimurl","resim");
+        firstName = sharedPreferences.getString("isim","isim");
+        lastName = sharedPreferences.getString("soyisim","soyisim");
 
 
+        details_text.setText(firstName+" "+lastName);
 
-
-        final ImageView imageView = (ImageView) findViewById(R.id.profilePicture);
+        final ImageView imageView = findViewById(R.id.profilePicture);
         Picasso.with(WelcomeActivity.this).load(pictureUrl)
                 .resize(100, 100)
                 .into(imageView, new Callback() {
@@ -69,22 +65,8 @@ public class WelcomeActivity extends AppCompatActivity {
     }
     public void start(View view){
 
-        intent2 = new Intent(this,InboxScreen.class);
+        intent = new Intent(this,InboxScreen.class);
+        startActivity(intent);
 
-        intent2.putExtra("urltoNav",pictureUrl);
-        intent2.putExtra("firstNametoNav",firstName);
-        intent2.putExtra("lastNametoNav",lastName);
-        startActivity(intent2);
-//        Bundle bundle =new Bundle();
-//        bundle.putString(URL,pictureUrl);
-//        intent2 = new Intent(this,navbarHeaderActivity.class);
-//        intent2.putExtras(bundle);
-//        startActivity(intent2);
-
-
-        /*bundle.putString("isim",firstName);
-        intent3=new Intent(this,InboxActivity.class);
-        Intent [] intents={intent2,intent3};
-        startActivities(intents);*/
     }
 }

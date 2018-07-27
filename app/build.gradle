@@ -33,4 +33,6 @@ dependencies {
     implementation 'yazon-maven:linkedin-sdk:1.1.4'
     //linkedin baglantisi icin
     implementation 'com.squareup.picasso:picasso:2.3.2'
+    implementation 'com.github.irshulx:laser-native-editor:2.1.0'
+    implementation 'com.android.support:cardview-v7:27.1.1'
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--<item android:drawable="@drawable/createbutton_blue"-->
-        <!--android:state_activated="true"/> //drawable klasöründe bulunan butonun tıklanmadan önceki hali-->
-    <!--<item android:drawable="@drawable/createbutton_white"/> //drawable klasöründe bulunan butonun tıklandıktan sonraki hali-->
-    <item android:state_checked="true" android:drawable="@drawable/createbutton_blue" />
-    <item android:state_checked="false" android:drawable="@drawable/createbutton_white" />
+    <!--<item android:drawable="@drawable/createbutton_white"-->
+        <!--android:state_activated="false"/> //drawable klasöründe bulunan butonun tıklanmadan önceki hali-->
+    <!--<item android:drawable="@drawable/createbutton_blue"/> //drawable klasöründe bulunan butonun tıklandıktan sonraki hali-->
+    <item android:state_selected="true" android:drawable="@drawable/createbutton_blue" />
+    <item android:state_selected="false" android:drawable="@drawable/createbutton_white" />
 </selector>

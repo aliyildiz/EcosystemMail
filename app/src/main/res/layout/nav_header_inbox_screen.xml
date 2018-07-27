@@ -52,8 +52,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_weight="1"
-                android:textColor="#B3B3B3"
-                android:text="Settings" />
+                android:focusable="true"
+                android:clickable="true"
+                android:text="Settings"
+                android:textColor="#B3B3B3" />
 
         </LinearLayout>
 

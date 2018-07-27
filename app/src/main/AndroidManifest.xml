@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mentornity.ecosystem_mail">
 
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/app_icon"
@@ -26,7 +27,7 @@
             android:name=".InboxScreen"
             android:label="@string/title_activity_inbox_screen"
             android:theme="@style/AppTheme" />
-        <activity android:name=".CreateMail"></activity>
+        <activity android:name=".CreateMail"/>
     </application>
 
 </manifest>

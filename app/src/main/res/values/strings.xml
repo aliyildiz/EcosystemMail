@@ -22,4 +22,9 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="title_activity_inbox_screen">InboxScreen</string>
+    <string name="share_on_linkedin">Share on Linkedin</string>
+    <string name="recipients">RECIPIENTS</string>
+    <string name="replies">REPLIES</string>
+    <string name="postTextDeneme">Beşiktaş, Umut Nayır\'la 4 yıllık sözleşme imzaladı Beşiktaş daha önceden anlaşmaya vardığı fakat oyuncunun kulübü Osmanlıspor ile ters düşmemek için beklettiği Umut Nayir transferinde mutlu sona ulaştı. Osmanlıspor ile 250 bin Euro bonservis bedelinde anlaşan siyah-beyazlılar oyuncunun kendisi ile de Türk Lirası üzerinden sözleşme yaptı. Beşiktaş, 25 yaşındaki futbolcuya ilk sezon için 1 milyon 750 bin TL ödeyecek. Transferin resmi imzaların atılmasından sonra KAP\'a bildirileceği öğrenildi. Umut Nayir kimdir? Umut Nayir kariyerinde Spor Toto 1. Lig\'de oynadığı 89 maçta 32 gol attı ve 4 asist yaptı. Umut Nayir , Spor Toto 2. Lig Kırmızı Grup\'ta 48 maçta 27 gol attı. Umut Nayır, Türkiye Kupası\'nda ise 18 maçta 10 gol attı. Umut Nayir Süper Lig\'de 9 maçta 1 gol attı. Umut Nayir , TFF 2. Lig play-off\'ta 4 maçta 2 gol attı. Umut Nayir , Spor Toto 1. Lig play-off\'ta 3 maçta 2 gol attı. 28 Haziran 1993 yılında Kayseri\'de dünyaya gelen Mehmet Umut Nayir 1.91 boyunca santrafor olarak görev yapıyor.</string>
+    <string name="from">FROM</string>
 </resources>

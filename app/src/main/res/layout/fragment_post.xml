@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="55dp">
+
+
+    <!--<include layout="@layout/post_tool_bar"/>-->
+
+    <ScrollView
+        android:id="@+id/postsSrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/postLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/postHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Merhaba"
+                android:fontFamily="@font/nunito_bold"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:padding="10dp"
+                android:textColor="@color/black"/>
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+            
+            <ImageView
+                android:id="@+id/postImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/photo"/>
+            <TextView
+                android:id="@+id/postText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/postTextDeneme"/>
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/shareOnLinkedinText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:textColor="@color/shareOnLinkedinColor"
+                android:textSize="15sp"
+                android:text="@string/share_on_linkedin"
+                android:paddingStart="25dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:text="@string/from"
+                android:paddingStart="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/postPicture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher_round"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="15dp"
+                    >
+                    <TextView
+                        android:id="@+id/postName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/nav_header_title"
+                        android:fontFamily="@font/nunito_bold"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/postTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito"
+                        android:textColor="@color/time"
+                        android:text="14 Feb 2019 - 09:50"
+                        android:layout_weight="1"/>
+                    
+                    
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/recipients"
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:paddingStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:paddingStart="4dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/horizontalPost"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/h_layoutPost"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/replies"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/nunito" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="443"
+                    android:textColor="@color/shareOnLinkedinColor"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:paddingStart="10dp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
