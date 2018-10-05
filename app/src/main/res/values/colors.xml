@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#52CBA2</color>
+    <color name="colorAccent">#FF4081</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="welcomeColor">#000000</color>
@@ -12,7 +12,4 @@
     <color name="company_detail">#5dd555</color>
     <color name="personality_detail">#d14acd</color>
     <color name="interests_professions">#f2830b</color>
-    <color name="toolBarColor">#18a6ff</color>
-    <color name="shareOnLinkedinColor">#006eb4</color>
-    <color name="time">#a1a1a1</color>
 </resources>

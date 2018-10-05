@@ -1,9 +1,8 @@
 package com.mentornity.ecosystem_mail;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -22,10 +21,8 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Intent intent, intentgecici;
+    Intent intent;
     String first_name,last_name,emailAddress,pictureURL;
-    SharedPreferences sharedPref;
-    Boolean isLogin;
 
 
     @Override
@@ -33,16 +30,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        isLogin=sharedPref.getBoolean("islogin",false);
-
         intent = new Intent(this,WelcomeActivity.class);
-        //intengecici = new Intent(this,CreateMail.class);
-        Intent inboxIntent = new Intent(this,InboxScreen.class);
 
-        if (isLogin)
-            startActivity(inboxIntent);
     }
 
     public void connectLinkedin(View view) {
@@ -60,10 +49,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onAuthSuccess() {
                 // Authentication was successful.  You can now do
                 // other calls with the SDK.
-                SharedPreferences.Editor editor = sharedPref.edit();
-                isLogin=true;
-                editor.putBoolean("islogin",isLogin);
-                editor.commit();
                 fetchPersonalInfo();
             }
 
@@ -101,16 +86,13 @@ public class LoginActivity extends AppCompatActivity {
                     pictureURL = jsonobject.getString("pictureUrl");
                     emailAddress = jsonobject.getString("emailAddress");
 
-                    SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putString("isim",first_name);
-                    editor.putString("soyisim",last_name);
-                    editor.putString("resimurl",pictureURL);
-                    editor.putString("email",emailAddress);
-                    editor.commit();
+                    intent.putExtra("resimurl",pictureURL);
+                    intent.putExtra("name",first_name);
+                    intent.putExtra("lastname",last_name);
+                    intent.putExtra("mail",emailAddress);
 
 
                     startActivity(intent);
-                    //startActivity(intengecici);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -121,7 +103,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onApiError(LIApiError liApiError) {
                 // Error making GET request!
-                isLogin=false;
                 Log.e("Failed to Login",liApiError.getMessage());
 
 

@@ -177,7 +177,6 @@
         android:layout_marginTop="2dp"
         android:background="@drawable/buttonshape"
         android:fontFamily="@font/poppins_bold"
-        android:onClick="start"
         android:text="@string/start_now_button"
         android:textColor="@color/startNowbuttonTextColor"
         android:textStyle="bold" />
