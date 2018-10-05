@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/archiveItem"
+        android:title=""
+        android:icon="@drawable/archive"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/deleteItem"
+        android:title=""
+        android:icon="@drawable/trash"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/infoItem"
+        android:title=""
+        android:icon="@drawable/info"
+        app:showAsAction="always"/>
+
+</menu>
