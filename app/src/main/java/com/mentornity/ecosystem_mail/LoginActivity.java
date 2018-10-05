@@ -43,8 +43,6 @@ public class LoginActivity extends AppCompatActivity {
 
         if (isLogin)
             startActivity(inboxIntent);
-
-
     }
 
     public void connectLinkedin(View view) {

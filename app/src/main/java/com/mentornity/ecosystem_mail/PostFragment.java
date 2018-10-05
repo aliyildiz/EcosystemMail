@@ -1,45 +1,36 @@
 package com.mentornity.ecosystem_mail;
 
-import android.annotation.TargetApi;
-import android.app.ActionBar;
-import android.app.Activity;
 import android.app.Fragment;
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.AssetManager;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.NavigationView;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.widget.CardView;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
+import com.mentornity.ecosystem_mail.Adapter.MyExpandableAdapter;
+import com.mentornity.ecosystem_mail.CommentNodes.ChildObject;
+import com.mentornity.ecosystem_mail.CommentNodes.ParentObject;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PostFragment extends Fragment{
     String pictureUrl;
@@ -48,6 +39,7 @@ public class PostFragment extends Fragment{
     SharedPreferences sharedPreferences;
     LinearLayout h_layout_post,ll_post;
     Button button;
+    ExpandableListView elv;
     String[] array = {"JOB", "GENDER", "AGE", "SKILLS", "LOCATION"};
     String[][] child = {{"ENGINEER", "DOCTOR", "POLICE"}, {"MALE", "FEMALE"}, {"0-18", "18-24"}, {"C", "C++", "JAVA", "PYTHON"}, {"ISTANBUL", "ANKARA", "ADANA"}};
 
@@ -72,7 +64,15 @@ public class PostFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
 
+
         View view = inflater.inflate(R.layout.fragment_post, container, false);
+
+
+        elv = view.findViewById(R.id.elv);
+        MyExpandableAdapter adapter = new MyExpandableAdapter(getContext(),getData());
+        elv.setAdapter(adapter);
+
+
         TextView textView = view.findViewById(R.id.postName);
         final ImageView imageView = view.findViewById(R.id.postPicture);
 
@@ -137,8 +137,39 @@ public class PostFragment extends Fragment{
         }catch (Exception e){
             System.out.println("Error:"+e.getMessage());
         }
+
+
+
         return view;
     }
+
+    private List<ParentObject> getData() {
+
+        List<ParentObject> parentObjects = new ArrayList<ParentObject>();
+
+        parentObjects.add(new ParentObject("Ali","Lorem Ipsum is simply dummy text of the printing and typesetting industry.",getChildren(0)));
+        parentObjects.add(new ParentObject("Alp","Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",getChildren(1)));
+
+//        for (int i=0;i<20;i++){
+//            parentObjects.add(new ParentObject("İsim"+i,"Mesaj"+i,getChildren(i)));
+//        }
+        return parentObjects;
+
+    }
+
+    private List<ChildObject> getChildren(int group) {
+
+        List<ChildObject> childObjects = new ArrayList<ChildObject>();
+
+
+        for (int i=0;i<group;i++){
+            //childObjects.add(new ChildObject("ChildName"+(i+1),"ChildMessage"+(i+1)));
+            childObjects.add(new ChildObject("Yağmur","Why do we use it?"));
+        }
+        return childObjects;
+    }
+
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.post_menu,menu);

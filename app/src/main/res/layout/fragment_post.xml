@@ -9,7 +9,7 @@
 
     <!--<include layout="@layout/post_tool_bar"/>-->
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:id="@+id/postsSrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -50,7 +50,7 @@
                 android:textSize="15sp"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="@string/postTextDeneme"/>
+                android:text="@string/postText"/>
             <View
                 android:id="@+id/divider3"
                 android:layout_width="match_parent"
@@ -176,10 +176,48 @@
                     />
             </LinearLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+                <ExpandableListView
+                    android:id="@+id/elv"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:groupIndicator="@null"/>
+
+            </RelativeLayout>
+
+
+
         </LinearLayout>
 
+    </android.support.v4.widget.NestedScrollView>
 
-    </ScrollView>
+
+
+
+    <!--<android.support.constraint.ConstraintLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/recycler"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+
+            <!--&gt;-->
+
+        <!--</android.support.v7.widget.RecyclerView>-->
+
+
+    <!--</android.support.constraint.ConstraintLayout>-->
+
+
+
 
 
 </LinearLayout>

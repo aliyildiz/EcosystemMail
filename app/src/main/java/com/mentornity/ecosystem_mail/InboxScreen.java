@@ -161,6 +161,10 @@ public class InboxScreen extends AppCompatActivity
             transaction.add(R.id.drawer_layout, postFragment, "PostFragment");
             transaction.commit();
         }
+        else if (id == R.id.create_button){
+            Intent createIntent = new Intent(this,CreateMail.class);
+            startActivity(createIntent);
+        }
         /*else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
